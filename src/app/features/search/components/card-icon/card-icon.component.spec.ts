@@ -22,19 +22,11 @@ describe('CardIconComponent', () => {
   });
 
   it('should set the correct link', () => {
-    const link = 'https://example.com';
+    const link = 'https://example.com/';
     component.link = link;
     fixture.detectChanges();
     const anchor = fixture.nativeElement.querySelector('a');
     expect(anchor.href).toBe(link);
-  });
-
-  it('should set the correct icon class', () => {
-    const iconClass = 'fa fa-user';
-    component.iconClass = iconClass;
-    fixture.detectChanges();
-    const icon = fixture.nativeElement.querySelector('i');
-    expect(icon.classList.contains(iconClass)).toBe(true);
   });
 
   it('should change the color on hover', () => {

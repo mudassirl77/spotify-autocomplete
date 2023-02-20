@@ -11,11 +11,27 @@
     </div>
     <div class="col-sm-10">
       <div class="card-body p-0">
-        <h6 class="card-title text-bg-light text-nowrap overflow-hidden text-truncate ps-2" [title]="title">{{title}}</h6>
-        <spotify-card-icon
-          iconClass="bi bi-play-circle-fill p-2"
-          tooltip="Preview"
-        ></spotify-card-icon>
+        <h6
+          class="card-title text-bg-light text-nowrap overflow-hidden text-truncate ps-2"
+          [title]="title"
+        >{{title}}</h6>
+
+        <ng-container *ngIf="!audioPlaying">
+          <spotify-card-icon
+            iconClass="bi bi-play-circle-fill p-2"
+            tooltip="Preview"
+            (click)="playAudio($event)"
+          ></spotify-card-icon>
+        </ng-container>
+
+        <ng-container *ngIf="audioPlaying">
+          <spotify-card-icon
+            iconClass="bi bi-pause-circle-fill p-2"
+            tooltip="Preview"
+            (click)="pauseAudio($event)"
+          ></spotify-card-icon>
+        </ng-container>
+
         <spotify-card-icon
           iconClass="bi bi-plus-circle-fill p-2"
           tooltip="Add to playlist"

@@ -5,9 +5,7 @@ import { ErrorHandling } from 'src/app/shared/utils/error-handling.util';
 import { SearchConstants } from '../constants/search.constants';
 import { SpotifySearchResult } from '../interfaces/search.interfaces';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SpotifyPublicHttpService {
   constructor(private httpClient: HttpClient) { }
 

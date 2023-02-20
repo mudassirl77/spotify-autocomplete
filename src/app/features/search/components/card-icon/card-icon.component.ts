@@ -9,6 +9,6 @@ export class CardIconComponent {
   public isHover: boolean = false;
 
   @Input() public iconClass: string = '';
-  @Input() public link: string = '';
+  @Input() public link: string = '#';
   @Input() public tooltip: string = '';
 }
