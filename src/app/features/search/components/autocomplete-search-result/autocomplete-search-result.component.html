@@ -1,0 +1,39 @@
+<div class="row rounded bg-dark text-bg-dark m-auto">
+  <div class="col-sm-4">
+    <h3 class="text-center">Artists</h3>
+    <div class="list-group">
+      <ng-container *ngFor="let artist of artists">
+        <spotify-card
+          [type]="artist.type"
+          [title]="artist.name"
+          [imageUrl]="artist.images[2]?.url"
+        ></spotify-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <h3 class="text-center">Albums</h3>
+    <div class="list-group">
+      <ng-container *ngFor="let album of albums">
+        <spotify-card
+          [type]="album.type"
+          [title]="album.name"
+          [imageUrl]="album.images[2]?.url"
+        ></spotify-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <h3 class="text-center">Tracks</h3>
+    <div class="list-group">
+      <ng-container *ngFor="let track of tracks">
+        <spotify-card
+          [type]="track.type"
+          [title]="track.name"
+          [imageUrl]="track.album.images[2]?.url"
+          [previewUrl]="track.previewUrl"
+        ></spotify-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

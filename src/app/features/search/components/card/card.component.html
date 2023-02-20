@@ -1,0 +1,30 @@
+<div class="card mb-3">
+  <div class="row g-0 p-1">
+    <div class="col-sm-2">
+      <img
+        [src]="imageUrl"
+        [alt]="title"
+        height="64"
+        width="64"
+        class="img rounded"
+      >
+    </div>
+    <div class="col-sm-10">
+      <div class="card-body p-0">
+        <h6 class="card-title text-bg-light text-nowrap overflow-hidden text-truncate ps-2" [title]="title">{{title}}</h6>
+        <spotify-card-icon
+          iconClass="bi bi-play-circle-fill p-2"
+          tooltip="Preview"
+        ></spotify-card-icon>
+        <spotify-card-icon
+          iconClass="bi bi-plus-circle-fill p-2"
+          tooltip="Add to playlist"
+        ></spotify-card-icon>
+        <spotify-card-icon
+          iconClass="bi bi-share-fill p-2"
+          tooltip="Share"
+        ></spotify-card-icon>
+      </div>
+    </div>
+  </div>
+</div>
