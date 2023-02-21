@@ -1,15 +1,29 @@
 <div class="container-fluid bg-black">
-  <h1 class="text-center m-4">Spotify Autocomplete</h1>
+  <h1 class="text-center m-4"><i
+      class="bi bi-spotify bg-dark"
+      style="font-size: 2rem;"
+    ></i></h1>
   <form>
     <div class="mb-3">
-      <input
-        type="text"
-        class="form-control rounded"
-        placeholder="Search for artists, albums or tracks"
-        name="search"
-        [(ngModel)]="query"
-        (keyup)="search()"
-      >
+      <div class="input-group">
+        <span
+          class="input-group-text"
+        >
+          <i
+            class="bi bi-search"
+            style="font-size: 1.5rem;"
+          ></i>
+        </span>
+        <input
+          type="text"
+          class="form-control rounded-end"
+          placeholder="Search for artists, albums or tracks"
+          name="search"
+          [(ngModel)]="query"
+          (keyup)="search()"
+        >
+      </div>
+
       <ng-container *ngIf="artists.length || albums.length || tracks.length">
         <spotify-autocomplete-search-result
           [artists]="artists"
