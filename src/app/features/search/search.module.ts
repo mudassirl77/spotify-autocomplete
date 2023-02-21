@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpotifyPublicHttpService } from './services/spotify-public.http.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +23,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SharedModule
   ],
   providers: [SpotifyPublicHttpService],
-  exports: [SearchPageComponent]
+  exports: [SearchPageComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SearchModule { }
