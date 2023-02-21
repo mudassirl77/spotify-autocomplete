@@ -1,36 +1,17 @@
 <div class="container-fluid bg-black">
-  <h1 class="text-center m-4"><i
-      class="bi bi-spotify bg-dark"
-      style="font-size: 2rem;"
-    ></i></h1>
-  <form>
-    <div class="mb-3">
-      <div class="input-group">
-        <span
-          class="input-group-text"
-        >
-          <i
-            class="bi bi-search"
-            style="font-size: 1.5rem;"
-          ></i>
-        </span>
-        <input
-          type="text"
-          class="form-control rounded-end"
-          placeholder="Search for artists, albums or tracks"
-          name="search"
-          [(ngModel)]="query"
-          (keyup)="search()"
-        >
-      </div>
+  <h1 class="extra-large pb-3">Search</h1>
+  <spotify-input-search
+    placeholder="Search for artists, albums or tracks"
+    name="search"
+    (inputChanged)="search($event)"
+  ></spotify-input-search>
 
-      <ng-container *ngIf="artists.length || albums.length || tracks.length">
-        <spotify-autocomplete-search-result
-          [artists]="artists"
-          [albums]="albums"
-          [tracks]="tracks"
-        ></spotify-autocomplete-search-result>
-      </ng-container>
-    </div>
-  </form>
+  <ng-container *ngIf="artists.length || albums.length || tracks.length">
+    <spotify-autocomplete-search-result
+      [artists]="artists"
+      [albums]="albums"
+      [tracks]="tracks"
+      (showMoreClicked)="showMoreResults()"
+    ></spotify-autocomplete-search-result>
+  </ng-container>
 </div>

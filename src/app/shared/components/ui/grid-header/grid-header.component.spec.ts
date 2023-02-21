@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardComponent } from './card.component';
+import { GridHeaderComponent } from './grid-header.component';
 
-describe('CardComponent', () => {
-  let component: CardComponent;
-  let fixture: ComponentFixture<CardComponent>;
+describe('GridHeaderComponent', () => {
+  let component: GridHeaderComponent;
+  let fixture: ComponentFixture<GridHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardComponent ]
+      declarations: [ GridHeaderComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CardComponent);
+    fixture = TestBed.createComponent(GridHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

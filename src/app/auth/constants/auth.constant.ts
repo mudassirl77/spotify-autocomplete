@@ -4,6 +4,7 @@ export class AuthContants {
   static readonly accessToken = 'accessToken';
   static readonly refreshToken = 'refreshToken';
   static readonly codeVerifier = 'codeVerifier';
+  static readonly requestedUrl = 'requestedUrl';
   static readonly state = 'state';
   static readonly sha256 = 'S256';
   static readonly spotifyAccountTokenBaseUrl = 'https://accounts.spotify.com/api/token';

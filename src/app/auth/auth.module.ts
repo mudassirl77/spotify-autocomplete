@@ -7,8 +7,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { SpotifyCallbackComponent } from './components/spotify-callback/spotify-callback.component';
 
-
-
 @NgModule({
   declarations: [
     AuthComponent,

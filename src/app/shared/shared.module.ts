@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from './components/ui/card/card.component';
+import { NavbarComponent } from './components/ui/navbar/navbar.component';
+import { GridHeaderComponent } from './components/ui/grid-header/grid-header.component';
+import { IconComponent } from './components/ui/icon/icon.component';
 import { InputSearchComponent } from './components/ui/input-search/input-search.component';
-import { LocalStorageService } from './services/local-storage.service';
-
-
 
 @NgModule({
   declarations: [
-    CardComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    NavbarComponent,
+    GridHeaderComponent,
+    IconComponent
   ],
   imports: [
     CommonModule
   ],
-  providers: [LocalStorageService]
+  providers: [],
+  exports: [
+    InputSearchComponent,
+    NavbarComponent,
+    GridHeaderComponent,
+    IconComponent
+  ]
 })
 export class SharedModule { }

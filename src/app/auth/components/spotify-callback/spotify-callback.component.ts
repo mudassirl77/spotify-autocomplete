@@ -17,7 +17,6 @@ export class SpotifyCallbackComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
       const code = params.code;
-      console.log(code);
       if (code) {
         this.authHttpService.getAccessToken(code).subscribe((res: any) => {
           const accessToken = res.access_token;
@@ -27,7 +26,7 @@ export class SpotifyCallbackComponent implements OnInit {
             localStorage.setItem(AuthContants.accessToken, accessToken);
             localStorage.setItem(AuthContants.refreshToken, refreshToken);
 
-            const redirectUrl = sessionStorage.getItem('requestedUrl');
+            const redirectUrl = sessionStorage.getItem(AuthContants.requestedUrl);
             if (!redirectUrl) {
               this.router.navigate(['/']);
             } else {

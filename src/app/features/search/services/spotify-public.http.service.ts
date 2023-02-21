@@ -9,9 +9,10 @@ import { SpotifySearchResult } from '../interfaces/search.interfaces';
 export class SpotifyPublicHttpService {
   constructor(private httpClient: HttpClient) { }
 
-  public searchItems(query: string): Observable<SpotifySearchResult> {
-    return this.httpClient.get<SpotifySearchResult>(`${SearchConstants.spotifyPublicBaseUrl}/search?q=${query}&type=artist,album,track&limit=5`).pipe(
-      catchError(err => ErrorHandling.handleError(err))
-    );
+  public searchItems(query: string, limit: number): Observable<SpotifySearchResult> {
+    return this.httpClient.get<SpotifySearchResult>(`${SearchConstants.spotifyPublicBaseUrl}/search?q=${query}&type=artist,album,track&limit=${limit}`)
+      .pipe(
+        catchError(err => ErrorHandling.handleError(err))
+      );
   }
 }

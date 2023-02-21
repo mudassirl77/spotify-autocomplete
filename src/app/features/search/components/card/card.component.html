@@ -6,7 +6,8 @@
         [alt]="title"
         height="64"
         width="64"
-        class="img rounded"
+        class="img rounded cursor-pointer"
+        (click)="goToSpotify($event)"
       >
     </div>
     <div class="col-sm-10">
@@ -16,30 +17,32 @@
           [title]="title"
         >{{title}}</h6>
 
-        <ng-container *ngIf="!audioPlaying">
-          <spotify-card-icon
-            iconClass="bi bi-play-circle-fill p-2"
-            tooltip="Preview"
-            (click)="playAudio($event)"
-          ></spotify-card-icon>
+        <ng-container *ngIf="previewUrl">
+          <ng-container *ngIf="!isAudioPlaying">
+            <spotify-icon
+              iconClass="bi bi-play-circle-fill p-2"
+              tooltip="Preview"
+              (click)="playAudio($event)"
+            ></spotify-icon>
+          </ng-container>
+
+          <ng-container *ngIf="isAudioPlaying">
+            <spotify-icon
+              iconClass="bi bi-pause-circle-fill p-2"
+              tooltip="Preview"
+              (click)="pauseAudio($event)"
+            ></spotify-icon>
+          </ng-container>
         </ng-container>
 
-        <ng-container *ngIf="audioPlaying">
-          <spotify-card-icon
-            iconClass="bi bi-pause-circle-fill p-2"
-            tooltip="Preview"
-            (click)="pauseAudio($event)"
-          ></spotify-card-icon>
-        </ng-container>
-
-        <spotify-card-icon
+        <spotify-icon
           iconClass="bi bi-plus-circle-fill p-2"
           tooltip="Add to playlist"
-        ></spotify-card-icon>
-        <spotify-card-icon
+        ></spotify-icon>
+        <spotify-icon
           iconClass="bi bi-share-fill p-2"
           tooltip="Share"
-        ></spotify-card-icon>
+        ></spotify-icon>
       </div>
     </div>
   </div>

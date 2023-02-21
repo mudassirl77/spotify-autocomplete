@@ -1,0 +1,14 @@
+<a
+  [href]="link"
+  [class]="anchorClass"
+>
+  <span [style.color]="isHover ? colorHovered : color">{{text}}</span>
+  <i
+    [class]="iconClass"
+    style="font-size: 1.5rem;"
+    [style.color]="isHover ? colorHovered : color"
+    [title]="tooltip"
+    (mouseover)="isHover = true"
+    (mouseleave)="isHover = false"
+  ></i>
+</a>

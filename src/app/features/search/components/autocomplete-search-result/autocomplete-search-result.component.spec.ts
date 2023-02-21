@@ -22,7 +22,7 @@ describe('AutocompleteSearchResultComponent', () => {
   });
 
   it('should render three columns with headings', () => {
-    const headings = fixture.nativeElement.querySelectorAll('h3');
+    const headings = fixture.nativeElement.querySelectorAll('spotify-grid-header');
     expect(headings.length).toBe(3);
     expect(headings[0].textContent).toBe('Artists');
     expect(headings[1].textContent).toBe('Albums');

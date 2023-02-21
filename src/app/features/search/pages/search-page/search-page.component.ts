@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'spotify-search-page',
-  templateUrl: './search-page.component.html',
-  styleUrls: ['./search-page.component.sass']
+  templateUrl: './search-page.component.html'
 })
-export class SearchPageComponent {
-
-}
+export class SearchPageComponent { }

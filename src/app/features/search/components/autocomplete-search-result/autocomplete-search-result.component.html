@@ -1,39 +1,56 @@
 <div class="row rounded bg-dark text-bg-dark m-auto">
+
   <div class="col-sm-4">
-    <h3 class="text-center">Artists</h3>
+    <spotify-grid-header>Artists</spotify-grid-header>
     <div class="list-group">
       <ng-container *ngFor="let artist of artists">
         <spotify-card
-          [type]="artist.type"
           [title]="artist.name"
-          [imageUrl]="artist.images[2]?.url"
+          [imageUrl]="artist.images[2]?.url || artist.images[1]?.url"
+          [spotifyExternalUrl]="artist.external_urls?.spotify"
         ></spotify-card>
       </ng-container>
     </div>
   </div>
+
   <div class="col-sm-4">
-    <h3 class="text-center">Albums</h3>
+    <spotify-grid-header>Albums</spotify-grid-header>
     <div class="list-group">
       <ng-container *ngFor="let album of albums">
         <spotify-card
-          [type]="album.type"
+          [type]="album.album_type"
           [title]="album.name"
-          [imageUrl]="album.images[2]?.url"
+          [imageUrl]="album.images[2]?.url || album.images[1]?.url"
+          [spotifyExternalUrl]="album.external_urls?.spotify"
         ></spotify-card>
       </ng-container>
     </div>
   </div>
+
   <div class="col-sm-4">
-    <h3 class="text-center">Tracks</h3>
+    <spotify-grid-header>Tracks</spotify-grid-header>
     <div class="list-group">
       <ng-container *ngFor="let track of tracks">
         <spotify-card
-          [type]="track.type"
           [title]="track.name"
-          [imageUrl]="track.album.images[2]?.url"
+          [imageUrl]="track.album.images[2]?.url || track.album.images[1]?.url"
           [previewUrl]="track.preview_url"
+          [spotifyExternalUrl]="track.external_urls?.spotify"
         ></spotify-card>
       </ng-container>
     </div>
   </div>
+
+  <div class="m-3">
+    <spotify-icon
+      anchorClass="text-decoration-none float-end"
+      iconClass="bi bi-caret-down p-2"
+      tooltip="Show More"
+      color="white"
+      colorHovered="green"
+      text="Show More"
+      (click)="$event.preventDefault();showMoreClicked.emit()"
+    ></spotify-icon>
+  </div>
+
 </div>
