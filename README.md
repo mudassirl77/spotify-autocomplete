@@ -25,12 +25,16 @@ It uses the Spotify Web API to fetch data and display it to the user in the grid
 3. Run application in development mode by using: `npm start` or `ng serve`
 
 ## Usage
-- Use the seach input to type query. No need to press enter
-- Results will appear based on query
-- Click on play icon (if available) to preview tracks
-- Click on image to view item details on Spotify
-- Click on Show More to display more results
-- A .gif file has been added to demonstrate the search flow
+1. After launching the app on `localhost://4200`, the auth flow will be triggered.
+2. You will be redirected to Spotify where you will need to login
+    - Note that sometimes it might throw error 'Incorrect email/password'. In this case, choose 'Continue with Google'. This works everytime for me.
+3. Once the authentication is successful, you will be redirected back to the search page of the application.
+4. You can them use the search input to type query. No need to press enter
+5. Results will appear based on query
+    - Click on play icon (if available) to preview tracks
+    - Click on image to view item details on Spotify
+    - Click on Show More to display more results
+    - A .gif file has been added to demonstrate the search flow
 
 ## Achievements
 - All minimum technical requirements were fulfilled
