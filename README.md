@@ -1,7 +1,7 @@
 # Spotify Autocomplete
-![Search Flow](src/assets/SpotifyAutocompleteSearchFlow.gif)
 Spotify Autocomplete is a simple Angular app that allows users to search for artists, albums, or tracks on Spotify using an autocomplete feature.
 It uses the Spotify Web API to fetch data and display it to the user in the grid format.
+![Search Flow](src/assets/SpotifyAutocompleteSearchFlow.gif)
 
 ## Features
 - Type in the autocomplete search bar to search for artists, albums, and tracks.
