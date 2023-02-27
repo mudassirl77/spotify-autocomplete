@@ -37,28 +37,11 @@ It uses the Spotify Web API to fetch data and display it to the user in the grid
     - A .gif file has been added to demonstrate the search flow
 
 ## Achievements
-- All minimum technical requirements were fulfilled
 - Code was structured properly with a clear separation of concerns
 - Coding best practices were followed
 - Unit tests have been added
 - Support for all latest and stable browsers through Bootstrap 5
 - Spotify Authorization Code Flow OAuth 2.0 was implemented
-
-## Additional Features
-1. Preview tracks
-    - Only tracks that can be previewed will have the play icon displayed
-
-2. Show More results
-    - Initially only 5 results will be shown but an additional of 5 rows can be retrieved when clicking on the link
-
-3. View searched Artists, Albums or Tracks on Spotify
-    - More details about a particular artist, album or track can be viewed by clicking on their respective image
-
-## Notes
-1. A header was added just to give the search page a proper look and feel. The links of the nav items do not work.
-2. Proper mobile support has not been added due to limited time.
-3. If token has been expired, consider routing to `/auth` manually as refresh token has not been implemented due to time constraint.
-
 
 ## Possible Future Expansion
 - Implement Share functionality for sharing tracks
