@@ -25,6 +25,8 @@ It uses the Spotify Web API to fetch data and display it to the user in the grid
 3. Run application in development mode by using: `npm start` or `ng serve`
 
 ## Usage
+![Search Flow](src/assets/SpotifyAutocompleteSearchFlow.gif)
+
 1. After launching the app on `localhost://4200`, the auth flow will be triggered.
 2. You will be redirected to Spotify where you will need to login
     - Note that sometimes it might throw error 'Incorrect email/password'. In this case, choose 'Continue with Google'. This works everytime for me.
